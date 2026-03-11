@@ -78,6 +78,11 @@ class PRReviewCLITests(unittest.TestCase):
             self.assertIn("Prompt written to", buffer.getvalue())
             self.assertIn("Update data migration", output_path.read_text(encoding="utf-8"))
 
+    def test_parse_args_supports_version_flag(self) -> None:
+        with self.assertRaises(SystemExit) as exc:
+            pr_review_cli.parse_args(["--version"])
+        self.assertEqual(exc.exception.code, 0)
+
 
 if __name__ == "__main__":
     unittest.main()

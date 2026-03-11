@@ -51,6 +51,7 @@ ai-pr-review-prompts/
 git clone https://github.com/armendujkani123/ai-pr-review-prompts.git
 cd ai-pr-review-prompts
 python3 pr_review_cli.py --list-modes
+python3 pr_review_cli.py --version
 ```
 
 ### Local Development
@@ -61,6 +62,7 @@ source .venv/bin/activate
 python3 -m pip install --upgrade pip
 python3 -m pip install -e .
 python3 -m unittest discover -s tests -v
+make test
 ```
 
 ## Usage

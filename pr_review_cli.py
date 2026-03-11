@@ -9,6 +9,7 @@ import textwrap
 from pathlib import Path
 
 DEFAULT_MODE = "general"
+VERSION = "0.1.0"
 
 
 def prompt_dir() -> Path:
@@ -139,6 +140,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--list-modes",
         action="store_true",
         help="List available review modes and exit.",
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {VERSION}",
     )
     return parser.parse_args(argv)
 
